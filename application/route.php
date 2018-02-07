@@ -9,16 +9,15 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-return [
-    '__pattern__' => [
-        'name' => '\w+',
-    ],
-    '[hello]'     => [
-        ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
-        ':name' => ['index/hello', ['method' => 'post']],
-    ],
-
-];
-
+use think\Route;
+Route::get('index/index', 'index/index/index');
+Route::get('message', 'index/message/list');
+Route::get('message/add', 'index/message/add');
+Route::post('message/add', 'index/message/create');
+Route::get('message/:id/edit', 'index/message/edit');
+Route::post('message/:id/edit', 'index/message/update');
+Route::get('message/:id/delete', 'index/message/delete');
+Route::get('member/:id', 'index/member/profile', [], ['id' => '\d+']);//指定参数
+Route::get('member/[:id]', 'index/member/profile', [], ['id' => '\d+']);//可选参数
 
 
