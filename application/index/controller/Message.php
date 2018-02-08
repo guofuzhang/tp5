@@ -11,7 +11,7 @@ class Message extends Controller
     public function list()
     {
         // 留言列表
-        echo 11;
+        echo 1111;
     }
 
     public function add()
@@ -28,7 +28,10 @@ class Message extends Controller
     {
         $id=$request->param();
         $id=$id['id'];
-        $res=Db::table('member')->where('member_id','=',$id);
+//        $res=Db::table('member')->where('member_id','=',$id);
+
+        $res=Db::query("select * from sy_member where member_id=$id");
+        error_log('the arr is:'.print_r($res,1));
         var_dump($res);
 //        echo $id;die;
         // 编辑留言页面
