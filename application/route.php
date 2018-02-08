@@ -11,7 +11,7 @@
 
 use think\Route;
 Route::get('index/index', 'index/index/index');
-Route::get('message', 'index/message/list');
+Route::any('message', 'index/message/list');
 Route::get('message/add', 'index/message/add');
 Route::post('message/add', 'index/message/create');
 Route::get('message/:id/edit', 'index/message/edit');

@@ -130,7 +130,7 @@ return [
         // 模板引擎类型 支持 php think 支持扩展
         'type'         => 'Think',
         // 模板路径
-        'view_path'    => '',
+        'view_path'    => __DIR__.'/index/view/',
         // 模板后缀
         'view_suffix'  => 'html',
         // 模板文件名分隔符
@@ -174,8 +174,14 @@ return [
         'type'  => 'File',
         // 日志保存目录
         'path'  => LOG_PATH,
+        'apart_level'   =>  ['error','sql'],
         // 日志记录级别
         'level' => [],
+
+        'file_size'     =>2097152,
+            //日志的时间格式，默认是` c `
+        'time_format'   =>'c'
+
     ],
 
     // +----------------------------------------------------------------------
@@ -243,4 +249,25 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
+
+
+//    验证码配置
+
+    'captcha'  => [
+        // 验证码字符集合
+       'codeSet'  => '2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY',
+       // 验证码字体大小(px)
+       'fontSize' => 10,
+       // 是否画混淆曲线
+       'useCurve' => false,
+        // 验证码图片高度
+       'imageH'   => 30,
+        // 验证码图片宽度
+        'imageW'   => 100,
+        // 验证码位数
+       'length'   => 5,
+        // 验证成功后是否重置
+        'reset'    => true
+],
+
 ];

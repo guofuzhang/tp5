@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d08192b80eb0c3554e8623f3214c1fdb",
+    "content-hash": "23c25f2408d8ded88cd4e16d9dd63545",
     "packages": [
         {
             "name": "topthink/framework",
@@ -56,6 +56,42 @@
                 "thinkphp"
             ],
             "time": "2018-01-31T08:40:10+00:00"
+        },
+        {
+            "name": "topthink/think-captcha",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/think-captcha.git",
+                "reference": "9572406f5ed6637f0e12f6106514d488e2cc1a43"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/top-think/think-captcha/9572406f5ed6637f0e12f6106514d488e2cc1a43.zip",
+                "reference": "9572406f5ed6637f0e12f6106514d488e2cc1a43",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "think\\captcha\\": "src/"
+                },
+                "files": [
+                    "src/helper.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "yunwuxin",
+                    "email": "448901948@qq.com"
+                }
+            ],
+            "description": "captcha package for thinkphp5",
+            "time": "2016-12-28T08:22:04+00:00"
         },
         {
             "name": "topthink/think-installer",
@@ -140,8 +176,10 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "topthink/think-captcha": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
