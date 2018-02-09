@@ -11,21 +11,25 @@ class Message extends Controller
     public function list(Request $request)
     {
         // 留言列表
-if($request->method('post')){
-    $data=$request->param();
-    var_dump($data);die;
-    $is_validate=$this->validate($data,[
-        'captcha|验证码'=>'require|captcha']);
-    echo $is_validate;
-}
-
-
-
+//if($request->method('post')){
+//    $data=$request->param();
+//    var_dump($data);die;
+//    $is_validate=$this->validate($data,[
+//        'captcha|验证码'=>'require|captcha']);
+//    echo $is_validate;
+//}
+       $res= Db::table('gf_member')
+                ->alias('e')
+                ->join('gf_manager a','a.id = e.member_id')
+                ->field('a.*,e.member_truename')
+                ->paginate(5);
+//       var_dump($res);die;
 //        return view,return $this->fetch(),return $this->display()
-        $res=Db::query("select * from sy_member where member_id=38");
+//        $res=Db::query("select * from sy_member where member_id=38");
 //        $this->assign('res',$res);
 //        $this->assign('name','ThinkPHP');
 $arr=$res;
+//var_dump($arr);
         $this->assign(
             'data',$arr
             );
